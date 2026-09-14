@@ -1,0 +1,9 @@
+services:
+  front:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./front:/app
+    ports:
+      - "3000:3000"
+    command: sh -lc "npm install && npm run dev -- -H 0.0.0.0 -p 3000"
